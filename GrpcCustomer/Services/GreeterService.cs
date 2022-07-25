@@ -3,6 +3,10 @@ using GrpcCustomer;
 
 namespace GrpcCustomer.Services
 {
+    //Класс сервиса (в данном случае GreeterService) наследуется от класса Greeter.GreeterBase.
+    //Greeter.GreeterBase - абстрактный класс, который автоматически генерируется
+    //по определению сервиса greeter в файле greeter.proto.
+
     public class GreeterService : Greeter.GreeterBase
     {
         private readonly ILogger<GreeterService> _logger;

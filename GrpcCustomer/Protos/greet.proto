@@ -1,21 +1,24 @@
-syntax = "proto3";
+syntax = "proto3"; //перва€ строка определ€ет тип используемого синтаксиса,
+				   //
 
-option csharp_namespace = "GrpcCustomer";
+option csharp_namespace = "GrpcCustomer"; // указываетс€ пространство имен, которое будет использоватьс€ с этим сервисом
+										 // ѕо умолчанию это название проекта. » соответственно генерируемые классы будут помещатьс€ в даное пространство имен.
 
-package greet;
+package greet;  //оператора package определ€ет название пакета
+			   //¬ данном случае пакет называетс€ "great". ”становка пакета позвол€ет разрешить конфликты имен при наличие сущностей с одинаковыми именами.
 
-// The greeting service definition.
+// ќпредел€ем service.
 service Greeter {
-  // Sends a greeting
+  // —ервис определ€етс€ с помощью ключевого слова service, после которого указываетс€ название сервиса. “о есть в данном случае сервис называетс€ "Greeter"
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
-// The request message containing the user's name.
+// —оздаем сообщение запроса The request message containing the user's name.
 message HelloRequest {
   string name = 1;
 }
 
-// The response message containing the greetings.
+// —оздаем сообщение ответа на запрос The response message containing the greetings.
 message HelloReply {
   string message = 1;
 }
